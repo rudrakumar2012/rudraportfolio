@@ -2,6 +2,7 @@ import Contact from "./components/Contact";
 import Main from "./components/Main";
 import Projects from "./components/Projects";
 import Sidenav from "./components/Sidenav";
+import About from "./components/About";
 import Work from "./components/Work";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Main />
         <Work />
         <Projects />
+        <About />
         <Contact />
       </div>
     </>

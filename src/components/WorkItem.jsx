@@ -1,6 +1,7 @@
 import React from "react";
 
 const WorkItem = ({ year, title, duration, details }) => {
+  const detailsList = details.split(". ");
   return (
     <>
       <ol className="flex flex-col md:flex-row relative border-l border-stone-200">
@@ -17,7 +18,14 @@ const WorkItem = ({ year, title, duration, details }) => {
               {duration}
             </span>
           </p>
-          <p className="my-2 text-base font-normal text-stone-500">{details}</p>
+          {detailsList.map((detail, index) => (
+            <p
+              key={index}
+              className="my-2 text-base font-normal text-stone-500"
+            >
+              {detail}
+            </p>
+          ))}
         </li>
       </ol>
     </>
