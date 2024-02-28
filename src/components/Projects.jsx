@@ -37,7 +37,7 @@ const Project = () => {
           img={portfolio}
           title="My Portfolio"
           tech="Web Development"
-          live=""
+          live="https://rudrakumarportfolio.netlify.app/"
           code="https://github.com/rudrakumar2012/rudraportfolio"
         />
         <ProjectItem
