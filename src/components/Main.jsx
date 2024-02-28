@@ -21,7 +21,7 @@ const Main = () => {
             I'm a
             <TypeAnimation
               sequence={[
-                "Devloper",
+                "Developer",
                 2000,
                 "Coder",
                 2000,

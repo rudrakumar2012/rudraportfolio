@@ -11,7 +11,7 @@ function App() {
   const scrollPosition = useScroll();
   return (
     <>
-      <div>
+      <div className="bg-gradient-custom">
         <Sidenav />
         <Main />
         <FadeInOnScroll scrollPosition={scrollPosition}>
