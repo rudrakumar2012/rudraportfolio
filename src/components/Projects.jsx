@@ -20,14 +20,14 @@ const Project = () => {
       <div className="grid sm:grid-cols-2 gap-12">
         <ProjectItem
           img={imdbClone}
-          title="Imdb-Clone"
+          title="Imdb-Clone (Desktop Optimized only)"
           tech="Web Development"
           live="https://imdb-clone-99.netlify.app/"
           code="https://github.com/rudrakumar2012/imdb-clone"
         />
         <ProjectItem
           img={votingdapp}
-          title="Voting Dapp"
+          title="Voting Dapp (Desktop Optimized only)"
           tech="Decentralized application"
           live="https://votingdappin.netlify.app/"
           code="https://github.com/rudrakumar2012/votingdapp"
@@ -42,7 +42,7 @@ const Project = () => {
         />
         <ProjectItem
           img={todoDapp}
-          title="To Do Dapp"
+          title="To Do Dapp (Desktop Optimized only)"
           tech="Decentralized application"
           live="https://tasktododapp.netlify.app/"
           code="https://github.com/rudrakumar2012/tododapp"
