@@ -1,4 +1,5 @@
 import React from "react";
+import profilePic from "../assets/profile.jpg";
 
 const About = () => {
   const email = "rudrakumarofkv@gmail.com";
@@ -10,11 +11,13 @@ const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
         {/* Left side with image placeholder */}
         <div className="flex justify-center items-center">
-          <img
-            src="path/to/your/image.jpg"
-            alt="Profile"
-            className="w-full h-auto md:w-auto"
-          />
+          <div className="max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg 2xl:max-w-xl mx-auto">
+            <img
+              src={profilePic}
+              alt="Profile"
+              className="w-full h-auto rounded-full"
+            />
+          </div>
         </div>
         {/* Right side with text and buttons */}
         <div className="flex flex-col justify-center">
