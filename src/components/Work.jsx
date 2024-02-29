@@ -4,14 +4,14 @@ import WorkItem from "./WorkItem";
 const data = [
   {
     year: 2022,
-    title: "Drupal Developer",
+    title: "Srijan Technologies - Drupal Developer",
     duration: "1 years 2 months",
     details:
       "Develop and maintain Drupal websites and web applications for various clients. Collaborate with designers and project managers to translate client requirements into functional and user-friendly websites. Ensure website performance and security through best practices and adherence to coding standards.",
   },
   {
     year: 2022,
-    title: "Drupal Developer (Intern)",
+    title: "Srijan Technologies - Drupal Developer (Intern)",
     duration: "7 months",
     details:
       "Developed a sample website featuring book and author information. Implemented functionality to sort books by author and genre enhancing user experience and navigation. Collaborated with the team to learn best practices in web development and project management.",

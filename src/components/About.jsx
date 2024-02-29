@@ -15,7 +15,7 @@ const About = () => {
             <img
               src={profilePic}
               alt="Profile"
-              className="w-full h-auto rounded-full"
+              className="w-3/4 h-auto rounded-full"
             />
           </div>
         </div>
