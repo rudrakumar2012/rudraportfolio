@@ -20,7 +20,7 @@ const Project = () => {
       <div className="grid sm:grid-cols-2 gap-12">
         <ProjectItem
           img={imdbClone}
-          title="Imdb-Clone (Desktop Optimized only)"
+          title="Imdb-Clone"
           tech="Web Development"
           live="https://imdb-clone-99.netlify.app/"
           code="https://github.com/rudrakumar2012/imdb-clone"
