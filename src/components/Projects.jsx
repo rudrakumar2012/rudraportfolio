@@ -4,6 +4,7 @@ import todoDapp from "../assets/tododapp.jpg";
 import imdbClone from "../assets/imdbclone.jpg";
 import portfolio from "../assets/portfolio.jpg";
 import votingdapp from "../assets/votingdapp.jpg";
+import recipekeeper from "../assets/recipekeeper.jpg";
 
 const Project = () => {
   return (
@@ -18,6 +19,13 @@ const Project = () => {
         Solidity.
       </p>
       <div className="grid sm:grid-cols-2 gap-12">
+        <ProjectItem
+          img={recipekeeper}
+          title="Recipe Keeper"
+          tech="Web Development"
+          live="https://recipe-keeper-a9vk.onrender.com/"
+          code="https://github.com/rudrakumar2012/Recipe-Keeper"
+        />
         <ProjectItem
           img={imdbClone}
           title="Imdb-Clone"

@@ -22,20 +22,29 @@ const About = () => {
         {/* Right side with text and buttons */}
         <div className="flex flex-col justify-center">
           <p className="text-lg font-bold text-gray-700 mb-2">
-            Highly motivated and passionate aspiring Blockchain Developer with a
-            strong foundation in blockchain concepts including web3.js, DApps,
-            consensus mechanisms, and security.
+            Experienced Full Stack Developer proficient in React.js, Postgres SQL, 
+            Node.js, Express.js, HTML, CSS, JavaScript, EJS, REST API, and Tailwind 
+            CSS. Demonstrated ability to develop robust web applications with a 
+            keen focus on usability and performance optimization.
           </p>
           <p className="text-lg text-gray-700 mb-1">
-            Actively seeking opportunities to:
+            Seeking opportunities to:
           </p>
           <p className="text-lg text-gray-700">
-            Gain practical experience in blockchain development through
-            internships, projects, or freelance work. Contribute to open-source
-            blockchain projects and collaborate with a community of passionate
-            developers. Learn from experienced professionals and continuously
-            expand my knowledge and skills in the ever-evolving blockchain
-            landscape.
+            <ul>
+              <li>
+                Apply my extensive experience in full stack development to tackle 
+                complex challenges and deliver high-quality solutions.
+              </li>
+              <li>
+                Collaborate with teams to architect and implement scalable software 
+                architectures that meet business objectives.
+              </li>
+              <li>
+                Further enhance my expertise by staying abreast of emerging technologies 
+                and industry best practices.
+              </li>
+            </ul>
           </p>
           <div className="flex gap-4 mt-4">
             <a

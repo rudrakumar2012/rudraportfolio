@@ -35,8 +35,8 @@ const Main = () => {
             />
           </h2>
           <h3 className="flex sm:text-xl text-xl pt-4 text-gray-800">
-            Blockchain Enthusiast | React.js Dev | Solidity & DApp Builder |
-            Seeking Blockchain Developer Role
+            Full Stack Developer | React.js Developer |
+            PERN Stack
           </h3>
           <div className="flex justify-between pt-6 max-w-[200px] w-full">
             <a
