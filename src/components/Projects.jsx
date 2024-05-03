@@ -4,7 +4,7 @@ import todoDapp from "../assets/tododapp.jpg";
 import imdbClone from "../assets/imdbclone.jpg";
 import portfolio from "../assets/portfolio.jpg";
 import votingdapp from "../assets/votingdapp.jpg";
-import recipekeeper from "../assets/recipekeeper.JPG";
+import recipekeeper from "../assets/recipekeeper.jpg";
 
 const Project = () => {
   return (
