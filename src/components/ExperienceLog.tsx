@@ -67,7 +67,7 @@ export default function ExperienceLog() {
               </div>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                 <span className="text-secondary font-mono">{exp.role}</span>
-                <span className="text-outline">//</span>
+                <span className="text-outline">{"//"}</span>
                 <span className="text-outline font-mono text-xs">{exp.duration}</span>
               </div>
             </div>
