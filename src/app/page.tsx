@@ -83,7 +83,7 @@ export default function Home() {
       {/* Footer / HUD Overlay */}
       <footer className="border-t border-outline-variant pt-12 pb-24 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-12">
         <div className="flex flex-col gap-2">
-          <span className="technical-readout">SYSTEM_VERSION_1.0_ANTIGRAVITY</span>
+          <span className="technical-readout">SYSTEM_VERSION_1.0</span>
           <p className="text-sm font-light text-outline">
             © 2026 Crafted with precision for the Web3 landscape.
           </p>
