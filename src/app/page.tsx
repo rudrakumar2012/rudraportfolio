@@ -5,6 +5,25 @@ import ExperienceLog from "@/components/ExperienceLog";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export default function Home() {
+  const fullStackProjects = [
+    {
+      title: "CINESAGE",
+      description: "A high-fidelity recreation of the IMDB cinematic interface. Powered by TMDB API for real-time movie data, featuring dynamic search, rating systems, and a premium Glassmorphic dark UI.",
+      repo: "https://github.com/rudrakumar2012/imdb-clone",
+      link: "https://imdb-clone-99.netlify.app/",
+      tags: ["React", "TMDB_API", "TailwindCSS", "Vite"],
+      category: "FULLSTACK" as const,
+    },
+    {
+      title: "TASTEVAULT",
+      description: "A centralized recipe management infrastructure. Allows users to archive, categorize, and search culinary data with a focus on performant data fetching and clean UX.",
+      repo: "https://github.com/rudrakumar2012/tastevault",
+      link: "https://tastevault-swart.vercel.app/",
+      tags: ["Node.js", "Express", "MongoDB", "EJS"],
+      category: "FULLSTACK" as const,
+    },
+  ];
+
   const decentralizedProjects = [
     {
       title: "VOTING DAPP",
@@ -12,23 +31,6 @@ export default function Home() {
       repo: "https://github.com/rudrakumar2012/votingdapp",
       tags: ["Solidity", "Hardhat", "Ethers.js", "React"],
       category: "DECENTRALIZED" as const,
-    },
-  ];
-
-  const fullStackProjects = [
-    {
-      title: "IMDB CLONE",
-      description: "A high-fidelity recreation of the IMDB cinematic interface. Powered by TMDB API for real-time movie data, featuring dynamic search, rating systems, and a premium Glassmorphic dark UI.",
-      repo: "https://github.com/rudrakumar2012/imdb-clone",
-      tags: ["React", "TMDB_API", "TailwindCSS", "Vite"],
-      category: "FULLSTACK" as const,
-    },
-    {
-      title: "RECIPE KEEPER",
-      description: "A centralized recipe management infrastructure. Allows users to archive, categorize, and search culinary data with a focus on performant data fetching and clean UX.",
-      repo: "https://github.com/rudrakumar2012/Recipe-Keeper",
-      tags: ["Node.js", "Express", "MongoDB", "EJS"],
-      category: "FULLSTACK" as const,
     },
   ];
 
@@ -46,33 +48,33 @@ export default function Home() {
       {/* Projects Grid */}
       <div className="flex flex-col gap-16 md:gap-24">
         
-        {/* Decentralized Systems */}
+        {/* Full Stack Applications */}
         <section className="flex flex-col gap-12">
           <div className="flex items-center gap-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-primary-neon tracking-tighter">
-              DECENTRALIZED_SYSTEMS
+              FULL_STACK_APPLICATIONS
             </h2>
             <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
             <span className="font-mono text-[10px] text-outline">COUNT::01</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {decentralizedProjects.map((p) => (
+            {fullStackProjects.map((p) => (
               <ProjectCard key={p.title} {...p} />
             ))}
           </div>
         </section>
 
-        {/* Full Stack Applications */}
+        {/* Decentralized Systems */}
         <section className="flex flex-col gap-12">
           <div className="flex items-center gap-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-tertiary tracking-tighter">
-              FULL_STACK_APPLICATIONS
+              DECENTRALIZED_SYSTEMS
             </h2>
             <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
             <span className="font-mono text-[10px] text-outline">COUNT::02</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {fullStackProjects.map((p) => (
+            {decentralizedProjects.map((p) => (
               <ProjectCard key={p.title} {...p} />
             ))}
           </div>

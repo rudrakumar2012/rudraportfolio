@@ -4,64 +4,59 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- `npm run dev` - Start Vite development server with HMR
-- `npm run build` - Build for production (outputs to `dist/`)
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint on all JS/JSX files (strict: 0 warnings allowed)
+- `npm run dev` - Start Next.js development server
+- `npm run build` - Build for production
+- `npm run start` - Start Next.js production server
+- `npm run lint` - Run Next.js ESLint
 
 ## Project Architecture
 
 ### Tech Stack
-- **Framework**: React 18 with Vite (ES modules)
-- **Styling**: Tailwind CSS with custom gradient theme
-- **Animations**: Framer Motion for scroll-based transitions
-- **Icons**: React Icons library
-- **Type Animation**: react-type-animation for typing effect
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 3 with custom dark sci-fi/HUD theme
+- **Animations**: Framer Motion for scroll and hover transitions
+- **Icons**: Lucide React
 
 ### Component Structure
 ```
 src/
-├── App.jsx                    # Root component, composes all sections
-├── main.jsx                   # Entry point
-├── index.css                  # Global styles
+├── app/
+│   ├── layout.tsx              # Root layout: Inter + Space Grotesk fonts, MouseGlow, AnimatedGrid, HUD border
+│   ├── page.tsx                 # Home page: Hero → About → Experience → Projects → Footer
+│   ├── globals.css              # CSS variables, glass-card/glow/HUD utility classes, noise texture
+│   └── api/status/route.ts     # Health-check API: fetches StockSage AI vercel endpoint, returns LIVE/OFFLINE
 ├── components/
-│   ├── Main.jsx              # Hero section with background image
-│   ├── Sidenav.jsx           # Navigation (mobile hamburger + desktop side nav)
-│   ├── FadeInOnScroll.jsx   # HOC wrapper for scroll-triggered animations
-│   ├── Work.jsx              # Work experience section
-│   ├── Projects.jsx          # Project showcase grid
-│   ├── ProjectItem.jsx       # Individual project card component
-│   ├── About.jsx             # About section
-│   ├── Contact.jsx           # Contact section
-│   ├── useScroll.js          # Custom hook for tracking scroll position
-├── assets/
-│   ├── *.jpg                 # Project screenshots and profile picture
-│   └── react.svg
-└── public/
-    └── smoky-mountains.jpg   # Hero background (used by Main.jsx)
+│   ├── Hero.tsx                 # Hero section with name, title, featured project (StockSage), system stats
+│   ├── AboutSystem.tsx          # Developer bio + skill tags + animated hex bars
+│   ├── ExperienceLog.tsx        # Timeline of work experience (Srijan Technologies) with animated scanner beam
+│   ├── ProjectCard.tsx          # Hover-animated glass card with tags, external links, version label
+│   ├── AnimatedGrid.tsx         # Fixed CRT grid background with scanning line animation
+│   ├── MouseGlow.tsx            # Cursor-tracking radial gradient spotlight
+│   └── StatusIndicator.tsx      # Fetches /api/status, shows colored dot (LIVE/OFFLINE/UNREACHABLE)
+└── app/icon.png                 # Browser tab favicon (glowing cyan-blue Antigravity R)
 ```
 
-### Key Patterns
-
-**Scroll-triggered animations**: Sections wrapped in `FadeInOnScroll` component receive `scrollPosition` prop from `useScroll` hook. Animation triggers when `scrollPosition > 100`.
-
-**Responsive navigation**: `Sidenav` provides two modes:
-- Mobile: Hamburger menu opens full-screen overlay with text labels
-- Desktop: Fixed vertical icon-only navigation on left side
-
-**Section IDs**: All main sections use semantic IDs (`main`, `work`, `projects`, `about`, `contact`) for anchor navigation.
+### Design Theme
+Dark sci-fi HUD / cyberpunk aesthetic with neon cyan (`#00EEFC`) and lime (`#C3F400`) accents on a near-black background (`#0B0E14`). Visual elements include:
+- **Glass Cards**: Semi-transparent with backdrop blur and subtle border
+- **HUD Border**: Fixed inset border with overlay blend for frame effect
+- **Noise Texture**: SVG filter overlay on body (3% opacity)
+- **Animated Grid**: CRT-style grid lines with vertical scanner line
+- **Mouse Spotlight**: Radial gradient follows cursor
+- **Timeline Scanner**: Animated beam on experience timeline
 
 ### Styling Conventions
-- Tailwind CSS utility classes throughout
-- Custom gradient `bg-gradient-custom` defined in `tailwind.config.js` (linear-gradient: #FFBE98 → #F7DED0)
-- Responsive breakpoints: `md:` and `lg:` prefixes used
-- Shadow styling: `shadow-lg shadow-gray-400` pattern common
+- Tailwind utility classes with custom color tokens in `tailwind.config.ts`
+- Color palette: `surface`, `foreground`, `primary-neon`, `secondary`, `tertiary`, `outline`, `outline-variant`
+- Typography: Inter (sans-serif body), Space Grotesk (display headings)
+- Reusable CSS classes: `glass-card`, `glow-blue`, `glow-lime`, `hud-container`, `hud-margin`, `technical-readout`, `no-line-section`
 
 ### Data Flow
-- `App.jsx` calls `useScroll()` once and passes `scrollPosition` to all `FadeInOnScroll` wrappers
-- Component composition: App wraps sections in FadeInOnScroll, no state management libraries
-- Static project data hardcoded in `Projects.jsx`
+- All data is static and hardcoded in `page.tsx` (project cards, skills, experiences)
+- The only dynamic element is `/api/status` — a server-side route that pings the deployed StockSage AI app and caches the result for 60s
+- `StatusIndicator` client component fetches `/api/status` on mount
 
-### Portability Notes
-- All project links point to external deployed sites or GitHub repos
-- Images imported directly from `src/assets/` in components
+### Deployment
+- Deployed on **Netlify** with `@netlify/plugin-nextjs` for serverless function support
+- Serverless route (`/api/status`) requires the Next.js plugin for Netlify compatibility

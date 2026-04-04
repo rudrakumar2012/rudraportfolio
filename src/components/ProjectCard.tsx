@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Link2, Code, ChevronRight } from "lucide-react";
+import { Link2, Code } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -52,11 +52,8 @@ export default function ProjectCard({ title, description, repo, link, tags, cate
         ))}
       </div>
 
-      <div className="pt-4 border-t border-outline-variant mt-2 flex justify-between items-center">
+      <div className="pt-4 border-t border-outline-variant mt-2">
         <span className="font-mono text-[10px] text-outline opacity-40 uppercase">VERSION_1.0_STABLE</span>
-        <div className="flex items-center gap-1 text-primary-neon font-mono text-[10px] tracking-widest opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">
-          VIEW_DEEP_LEVEL <ChevronRight className="w-3 h-3" />
-        </div>
       </div>
     </motion.div>
   );
