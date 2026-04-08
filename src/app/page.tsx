@@ -29,6 +29,7 @@ export default function Home() {
       title: "VOTING DAPP",
       description: "A secure, blockchain-based voting system built on Ethereum. Uses Solidity smart contracts to ensure transparency and prevent double-voting. Optimized for gas efficiency and high trust scores.",
       repo: "https://github.com/rudrakumar2012/votingdapp",
+      link: "https://votingdapp-sepia.vercel.app/voting",
       tags: ["Solidity", "Hardhat", "Ethers.js", "React"],
       category: "DECENTRALIZED" as const,
     },
