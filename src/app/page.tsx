@@ -33,6 +33,14 @@ export default function Home() {
       tags: ["Solidity", "Hardhat", "Ethers.js", "React"],
       category: "DECENTRALIZED" as const,
     },
+    {
+      title: "CHAINSTEPS",
+      description: "A decentralized milestone-based escrow system for trustless service contracts on Ethereum. Funds are locked on-chain and released incrementally as milestones are completed and approved — no trust required.",
+      repo: "https://github.com/rudrakumar2012/ChainSteps",
+      link: "https://chainsteps.netlify.app/",
+      tags: ["Solidity", "Hardhat", "Next.js", "Ethers.js"],
+      category: "DECENTRALIZED" as const,
+    },
   ];
 
   return (
@@ -56,7 +64,7 @@ export default function Home() {
               FULL_STACK_APPLICATIONS
             </h2>
             <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
-            <span className="font-mono text-[10px] text-outline">COUNT::01</span>
+            <span className="font-mono text-[10px] text-outline">COUNT::02</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {fullStackProjects.map((p) => (

@@ -8,7 +8,7 @@ export default function ExperienceLog() {
     {
       company: "Srijan Technologies",
       role: "Drupal Developer",
-      duration: "1 year 2 months | 2022 – Present",
+      duration: "1 year 2 months | 2022 – Nov 2023",
       logs: [
         "Develop and maintain Drupal websites and web applications for various high-profile clients.",
         "Collaborate with designers and project managers to translate complex client requirements into functional and user-friendly web architectures.",
