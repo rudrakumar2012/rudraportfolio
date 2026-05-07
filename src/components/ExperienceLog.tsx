@@ -31,14 +31,14 @@ export default function ExperienceLog() {
   return (
     <section aria-label="Experience" className="flex flex-col gap-12">
       <div className="flex items-center justify-end gap-6 text-right">
-        <span className="font-mono text-[10px] text-outline">SYS::TIMELINE</span>
+        <span className="technical-readout">SYS::TIMELINE</span>
         <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-primary-neon tracking-tighter uppercase">
           MISSION_LOGS
         </h2>
       </div>
 
-      <div className="relative border-l border-outline-variant/40 ml-4 md:ml-8 pl-8 md:pl-12 flex flex-col gap-16 py-4">
+      <div className="relative border-l border-outline-variant/40 ml-6 sm:ml-8 md:ml-8 pl-8 sm:pl-10 md:pl-12 flex flex-col gap-16 py-4 overflow-visible">
         {/* Animated Scanner Beam on the timeline */}
         {!reducedMotion && (
           <motion.div
@@ -50,7 +50,7 @@ export default function ExperienceLog() {
         )}
 
         {experiences.map((exp, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -59,7 +59,7 @@ export default function ExperienceLog() {
             className="flex flex-col gap-4 relative group"
           >
             {/* Timeline Node */}
-            <div className="absolute -left-[37px] md:-left-[53px] top-1.5 w-[10px] h-[10px] bg-surface border border-outline group-hover:bg-primary-neon group-hover:border-primary-neon transition-colors rotate-45" />
+            <div className="absolute -left-[39px] sm:-left-[45px] md:-left-[53px] top-1.5 w-[10px] h-[10px] bg-surface border border-outline group-hover:bg-primary-neon group-hover:border-primary-neon transition-colors rotate-45" />
 
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-3">

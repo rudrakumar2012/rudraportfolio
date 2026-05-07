@@ -17,8 +17,9 @@ export default function ProjectCard({ title, description, repo, link, tags, cate
   return (
     <motion.div
       whileHover={reducedMotion ? {} : { scale: 1.02, y: -5 }}
+      whileTap={reducedMotion ? {} : { scale: 0.98 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="glass-card flex flex-col gap-6 p-8 h-full bg-surface-container-low hover:bg-surface-highest/30 hover:border-primary-neon/30 hover:shadow-[0_0_40px_rgba(0,238,252,0.15)] transition-all duration-500 group relative overflow-hidden"
+      className="glass-card flex flex-col gap-6 p-8 h-full bg-surface-container-low hover:bg-surface-highest/30 hover:border-primary-neon/30 hover:shadow-[0_0_40px_rgba(0,238,252,0.15)] focus-within:bg-surface-highest/30 focus-within:border-primary-neon/30 focus-within:shadow-[0_0_40px_rgba(0,238,252,0.15)] transition-all duration-500 group relative overflow-hidden"
     >
       <div className="flex justify-between items-start">
         <div className="flex flex-col gap-1">
@@ -47,14 +48,14 @@ export default function ProjectCard({ title, description, repo, link, tags, cate
 
       <div className="flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <span key={tag} className="technical-readout bg-surface-highest px-3 py-1 rounded-sm text-[10px]">
+          <span key={tag} className="technical-readout bg-surface-highest px-3 py-1 rounded-sm">
             {tag}
           </span>
         ))}
       </div>
 
       <div className="pt-4 border-t border-outline-variant mt-2">
-        <span className="font-mono text-[10px] text-outline opacity-40 uppercase">VERSION_1.0_STABLE</span>
+        <span className="technical-readout opacity-40">VERSION_1.0_STABLE</span>
       </div>
     </motion.div>
   );

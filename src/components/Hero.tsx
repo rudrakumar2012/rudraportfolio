@@ -58,7 +58,7 @@ export default function Hero() {
           transition={{ duration: reducedMotion ? 0 : 0.8, delay: reducedMotion ? 0 : 0.2 }}
           className="glass-card p-1 bg-gradient-to-br from-primary-neon/10 to-transparent"
         >
-          <div className="bg-surface p-8 rounded-[inherit]">
+          <div className="bg-surface p-4 sm:p-6 md:p-8 rounded-[inherit]">
             <div className="flex flex-col gap-6">
               <div className="flex justify-between items-start">
                 <div className="flex flex-col gap-1">
@@ -112,21 +112,37 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: reducedMotion ? 0 : 1, delay: reducedMotion ? 0 : 0.5 }}
-          className="hidden lg:flex flex-col gap-8 items-end opacity-40 hover:opacity-100 transition-opacity"
+          className="hidden lg:flex flex-col gap-8 items-end opacity-60"
         >
-          <div className="flex flex-col items-end group">
+          <div className="flex flex-col items-end">
             <span className="technical-readout">LOCATION</span>
-            <span className="font-mono text-xs group-hover:text-primary-neon transition-colors">GLOBAL_MESH [INDIA]</span>
+            <span className="font-mono text-xs text-outline">GLOBAL_MESH [INDIA]</span>
           </div>
-          <div className="flex flex-col items-end group">
+          <div className="flex flex-col items-end">
             <span className="technical-readout">UPTIME</span>
-            <span className="font-mono text-xs group-hover:text-primary-neon transition-colors">99.982%_STABLE</span>
+            <span className="font-mono text-xs text-outline">99.982%_STABLE</span>
           </div>
-          <div className="flex flex-col items-end group">
+          <div className="flex flex-col items-end">
             <span className="technical-readout">ENCRYPTION</span>
-            <span className="font-mono text-xs group-hover:text-primary-neon transition-colors">AES_256_ACTIVE</span>
+            <span className="font-mono text-xs text-outline">AES_256_ACTIVE</span>
           </div>
         </motion.div>
+      </div>
+
+      {/* Mobile stats row — visible below lg breakpoint */}
+      <div className="flex lg:hidden gap-6 flex-wrap">
+        <div className="flex flex-col gap-1">
+          <span className="technical-readout">LOCATION</span>
+          <span className="font-mono text-xs text-outline">GLOBAL_MESH [INDIA]</span>
+        </div>
+        <div className="flex flex-col gap-1">
+          <span className="technical-readout">UPTIME</span>
+          <span className="font-mono text-xs text-outline">99.982%_STABLE</span>
+        </div>
+        <div className="flex flex-col gap-1">
+          <span className="technical-readout">ENCRYPTION</span>
+          <span className="font-mono text-xs text-outline">AES_256_ACTIVE</span>
+        </div>
       </div>
     </section>
   );

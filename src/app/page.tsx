@@ -60,11 +60,11 @@ export default function Home() {
         {/* Full Stack Applications */}
         <section aria-label="Full Stack Projects" className="flex flex-col gap-12">
           <div className="flex items-center gap-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-primary-neon tracking-tighter">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-display font-medium text-primary-neon tracking-tighter break-all sm:break-normal">
               FULL_STACK_APPLICATIONS
             </h2>
             <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
-            <span className="font-mono text-[10px] text-outline">{`COUNT::${String(fullStackProjects.length).padStart(2, "0")}`}</span>
+            <span className="technical-readout">{`COUNT::${String(fullStackProjects.length).padStart(2, "0")}`}</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {fullStackProjects.map((p) => (
@@ -76,11 +76,11 @@ export default function Home() {
         {/* Decentralized Systems */}
         <section aria-label="Decentralized Projects" className="flex flex-col gap-12">
           <div className="flex items-center gap-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-tertiary tracking-tighter">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-display font-medium text-tertiary tracking-tighter break-all sm:break-normal">
               DECENTRALIZED_SYSTEMS
             </h2>
             <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
-            <span className="font-mono text-[10px] text-outline">{`COUNT::${String(decentralizedProjects.length).padStart(2, "0")}`}</span>
+            <span className="technical-readout">{`COUNT::${String(decentralizedProjects.length).padStart(2, "0")}`}</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {decentralizedProjects.map((p) => (
@@ -114,7 +114,7 @@ export default function Home() {
 
         <div className="flex flex-col md:items-end w-full md:w-auto">
           <span className="technical-readout text-primary-neon">ENCRYPTED_HANDSHAKE</span>
-          <span className="font-mono text-[10px] text-outline underline underline-offset-4">PUBLIC_KEY://0x3E...F9</span>
+          <span className="technical-readout underline underline-offset-4">PUBLIC_KEY://0x3E...F9</span>
         </div>
       </footer>
     </div>

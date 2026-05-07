@@ -30,7 +30,7 @@ function HexBars() {
               transition={{ duration: 1, delay: i * 0.1 + 0.5 }}
             />
           </div>
-          <span className="font-mono text-[10px] text-outline">
+          <span className="technical-readout">
             HEX_{bar.hex}
           </span>
         </div>
@@ -53,7 +53,7 @@ export default function AboutSystem() {
           IDENTITY_READOUT
         </h2>
         <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
-        <span className="font-mono text-[10px] text-outline">SYS::BIO</span>
+        <span className="technical-readout">SYS::BIO</span>
       </div>
 
       <motion.div
@@ -84,7 +84,7 @@ export default function AboutSystem() {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="font-mono text-xs text-foreground bg-surface-highest/50 border border-outline-variant px-3 py-1.5 rounded-sm hover:border-secondary/50 hover:text-secondary transition-colors cursor-default"
+                    className="font-mono text-xs text-foreground bg-surface-highest/50 border border-outline-variant px-3 py-1.5 rounded-sm"
                   >
                     {skill}
                   </span>
