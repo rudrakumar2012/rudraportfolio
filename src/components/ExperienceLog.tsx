@@ -33,7 +33,7 @@ export default function ExperienceLog() {
       <div className="flex items-center justify-end gap-6 text-right">
         <span className="technical-readout">SYS::TIMELINE</span>
         <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-primary-neon tracking-tighter uppercase">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-display font-medium text-primary-neon tracking-tighter uppercase">
           MISSION_LOGS
         </h2>
       </div>

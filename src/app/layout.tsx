@@ -21,6 +21,18 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Rudra Kumar | Full Stack & Web3 Developer",
   description: "Portfolio of Rudra Kumar, specializing in Decentralized Systems and Full Stack Applications.",
+  openGraph: {
+    title: "Rudra Kumar | Full Stack & Web3 Developer",
+    description: "Portfolio of Rudra Kumar, specializing in Decentralized Systems and Full Stack Applications.",
+    url: "https://rudraportfolio.netlify.app",
+    siteName: "Rudra Kumar",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rudra Kumar | Full Stack & Web3 Developer",
+    description: "Portfolio of Rudra Kumar, specializing in Decentralized Systems and Full Stack Applications.",
+  },
 };
 
 export default function RootLayout({

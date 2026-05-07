@@ -26,7 +26,7 @@ export default function ProjectCard({ title, description, repo, link, tags, cate
           <span className={`technical-readout ${category === "DECENTRALIZED" ? "text-primary-neon" : "text-tertiary"}`}>
             MODULE::{category}_SYSTEM
           </span>
-          <h3 className="text-3xl font-display font-medium tracking-tight group-hover:text-primary-neon transition-colors">
+          <h3 className="text-2xl sm:text-3xl font-display font-medium tracking-tight group-hover:text-primary-neon transition-colors">
             {title}
           </h3>
         </div>

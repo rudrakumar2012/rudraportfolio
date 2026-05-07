@@ -73,13 +73,13 @@ export default function Hero() {
               </p>
 
               <div className="flex flex-wrap gap-4 mt-4">
-                <div className="flex items-center gap-2 technical-readout bg-surface-highest/20 px-3 py-1.5 rounded-sm">
+                <div className="flex items-center gap-2 technical-readout bg-surface-highest/25 px-3 py-1.5 rounded-sm">
                   <Cpu className="w-3 h-3" /> NEURAL_NETS
                 </div>
-                <div className="flex items-center gap-2 technical-readout bg-surface-highest/20 px-3 py-1.5 rounded-sm">
+                <div className="flex items-center gap-2 technical-readout bg-surface-highest/25 px-3 py-1.5 rounded-sm">
                   <Globe className="w-3 h-3" /> VERCEL_EDGE
                 </div>
-                <div className="flex items-center gap-2 technical-readout bg-surface-highest/20 px-3 py-1.5 rounded-sm">
+                <div className="flex items-center gap-2 technical-readout bg-surface-highest/25 px-3 py-1.5 rounded-sm">
                   <Database className="w-3 h-3" /> REALTIME_DB
                 </div>
               </div>

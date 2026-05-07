@@ -4,6 +4,18 @@ import AboutSystem from "@/components/AboutSystem";
 import ExperienceLog from "@/components/ExperienceLog";
 import { Github, Linkedin, Mail } from "lucide-react";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Rudra Kumar",
+  url: "https://rudraportfolio.netlify.app",
+  jobTitle: "Full Stack & Web3 Developer",
+  sameAs: [
+    "https://github.com/rudrakumar2012",
+    "https://www.linkedin.com/in/rudra-kumar-71a180172/",
+  ],
+};
+
 export default function Home() {
   const fullStackProjects = [
     {
@@ -44,7 +56,12 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col gap-16 md:gap-32">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="flex flex-col gap-16 md:gap-24 lg:gap-32">
       {/* Hero Section */}
       <Hero />
 
@@ -118,5 +135,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   );
 }

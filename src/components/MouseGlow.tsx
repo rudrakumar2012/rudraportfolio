@@ -33,7 +33,7 @@ export default function MouseGlow() {
       animate={{
         background:
           mousePosition.x >= 0
-            ? `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(0, 238, 252, 0.08), transparent 80%)`
+            ? `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(var(--primary-neon-rgb), 0.08), transparent 80%)`
             : "transparent",
       }}
       transition={{ type: "tween", ease: "backOut", duration: 0.1 }}

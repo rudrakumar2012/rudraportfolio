@@ -3,13 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #0b0e14;
-  --foreground: #ecedf6;
-  --surface: #0b0e14;
-  --surface-container-low: #10131a;
-  --surface-container-high: #1c2028;
-  --primary-neon: #00eefc;
-  --secondary-lime: #c3f400;
+  --primary-neon-rgb: 0, 238, 252;
+  --secondary-lime-rgb: 195, 244, 0;
 }
 
 @layer base {
@@ -34,20 +29,23 @@
   }
 
   .glow-blue {
-    box-shadow: 0 0 40px rgba(0, 238, 252, 0.1);
+    box-shadow: 0 0 40px rgba(var(--primary-neon-rgb), 0.1);
   }
 
   .glow-lime {
-    box-shadow: 0 0 40px rgba(195, 244, 0, 0.1);
+    box-shadow: 0 0 40px rgba(var(--secondary-lime-rgb), 0.1);
   }
 
   /* Heads-Up Display (HUD) Margin Layout */
   .hud-container {
     @apply relative min-h-screen px-4 py-12 md:py-24 md:px-12 lg:px-24;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
   }
 
   .hud-margin {
-    @apply fixed inset-0 pointer-events-none border-[1px] border-outline-variant mix-blend-overlay opacity-20;
+    @apply fixed pointer-events-none border-[1px] border-outline-variant mix-blend-overlay opacity-20;
+    inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 
   .no-line-section {
@@ -71,6 +69,12 @@ body::before {
   opacity: 0.03;
   pointer-events: none;
   z-index: 50;
+}
+
+@media (max-width: 639px) {
+  body::before {
+    opacity: 0.015;
+  }
 }
 
 /* Respect reduced motion preference */

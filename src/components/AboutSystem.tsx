@@ -49,7 +49,7 @@ export default function AboutSystem() {
   return (
     <section aria-label="About" className="flex flex-col gap-12">
       <div className="flex items-center gap-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-secondary tracking-tighter uppercase">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-display font-medium text-secondary tracking-tighter uppercase">
           IDENTITY_READOUT
         </h2>
         <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
@@ -84,7 +84,7 @@ export default function AboutSystem() {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="font-mono text-xs text-foreground bg-surface-highest/50 border border-outline-variant px-3 py-1.5 rounded-sm"
+                    className="font-mono text-xs text-foreground bg-surface-highest/25 border border-outline-variant px-3 py-1.5 rounded-sm"
                   >
                     {skill}
                   </span>

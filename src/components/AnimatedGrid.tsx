@@ -11,8 +11,8 @@ export default function AnimatedGrid() {
         className="absolute inset-0"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(0, 238, 252, 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0, 238, 252, 0.1) 1px, transparent 1px)
+            linear-gradient(to right, rgba(var(--primary-neon-rgb), 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(var(--primary-neon-rgb), 0.1) 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px',
           maskImage: 'radial-gradient(ellipse 60% 60% at 50% 50%, black 10%, transparent 100%)',
