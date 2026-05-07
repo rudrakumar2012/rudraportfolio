@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link2, Code } from "lucide-react";
 
 interface ProjectCardProps {
@@ -13,9 +13,10 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ title, description, repo, link, tags, category }: ProjectCardProps) {
+  const reducedMotion = useReducedMotion();
   return (
     <motion.div
-      whileHover={{ scale: 1.02, y: -5 }}
+      whileHover={reducedMotion ? {} : { scale: 1.02, y: -5 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="glass-card flex flex-col gap-6 p-8 h-full bg-surface-container-low hover:bg-surface-highest/30 hover:border-primary-neon/30 hover:shadow-[0_0_40px_rgba(0,238,252,0.15)] transition-all duration-500 group relative overflow-hidden"
     >
@@ -30,11 +31,11 @@ export default function ProjectCard({ title, description, repo, link, tags, cate
         </div>
         <div className="flex items-center gap-3">
           {link && (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="text-outline hover:text-secondary p-1">
+            <a href={link} target="_blank" rel="noopener noreferrer" aria-label="Live demo" className="text-outline hover:text-secondary p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center">
               <Link2 className="w-5 h-5" />
             </a>
           )}
-          <a href={repo} target="_blank" rel="noopener noreferrer" className="text-outline hover:text-primary-neon p-1">
+          <a href={repo} target="_blank" rel="noopener noreferrer" aria-label="Source code" className="text-outline hover:text-primary-neon p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center">
             <Code className="w-5 h-5" />
           </a>
         </div>

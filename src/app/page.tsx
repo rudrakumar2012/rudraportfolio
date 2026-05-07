@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import AboutSystem from "@/components/AboutSystem";
 import ExperienceLog from "@/components/ExperienceLog";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Home() {
   const fullStackProjects = [
@@ -58,15 +58,15 @@ export default function Home() {
       <div className="flex flex-col gap-16 md:gap-24">
         
         {/* Full Stack Applications */}
-        <section className="flex flex-col gap-12">
+        <section aria-label="Full Stack Projects" className="flex flex-col gap-12">
           <div className="flex items-center gap-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-primary-neon tracking-tighter">
               FULL_STACK_APPLICATIONS
             </h2>
             <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
-            <span className="font-mono text-[10px] text-outline">COUNT::02</span>
+            <span className="font-mono text-[10px] text-outline">{`COUNT::${String(fullStackProjects.length).padStart(2, "0")}`}</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {fullStackProjects.map((p) => (
               <ProjectCard key={p.title} {...p} />
             ))}
@@ -74,15 +74,15 @@ export default function Home() {
         </section>
 
         {/* Decentralized Systems */}
-        <section className="flex flex-col gap-12">
+        <section aria-label="Decentralized Projects" className="flex flex-col gap-12">
           <div className="flex items-center gap-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-tertiary tracking-tighter">
               DECENTRALIZED_SYSTEMS
             </h2>
             <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
-            <span className="font-mono text-[10px] text-outline">COUNT::02</span>
+            <span className="font-mono text-[10px] text-outline">{`COUNT::${String(decentralizedProjects.length).padStart(2, "0")}`}</span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {decentralizedProjects.map((p) => (
               <ProjectCard key={p.title} {...p} />
             ))}
@@ -100,18 +100,15 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex items-center gap-8">
-          <a href="https://github.com/rudrakumar2012" target="_blank" rel="noopener noreferrer" className="text-outline hover:text-primary-neon transition-colors">
+        <div className="flex items-center gap-4">
+          <a href="https://github.com/rudrakumar2012" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-outline hover:text-primary-neon transition-colors p-3 min-w-[44px] min-h-[44px] flex items-center justify-center">
             <Github className="w-5 h-5" />
           </a>
-          <a href="https://www.linkedin.com/in/rudra-kumar-71a180172/" target="_blank" rel="noopener noreferrer" className="text-outline hover:text-tertiary transition-colors">
+          <a href="https://www.linkedin.com/in/rudra-kumar-71a180172/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-outline hover:text-tertiary transition-colors p-3 min-w-[44px] min-h-[44px] flex items-center justify-center">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="mailto:rudra@example.com" className="text-outline hover:text-secondary transition-colors">
+          <a href="mailto:rudrakumarofkv@gmail.com" aria-label="Email" className="text-outline hover:text-secondary transition-colors p-3 min-w-[44px] min-h-[44px] flex items-center justify-center">
             <Mail className="w-5 h-5" />
-          </a>
-          <a href="#" className="text-outline hover:text-primary-neon transition-colors">
-            <Twitter className="w-5 h-5" />
           </a>
         </div>
 

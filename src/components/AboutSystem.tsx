@@ -47,7 +47,7 @@ export default function AboutSystem() {
   ];
 
   return (
-    <section className="flex flex-col gap-12">
+    <section aria-label="About" className="flex flex-col gap-12">
       <div className="flex items-center gap-6">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-secondary tracking-tighter uppercase">
           IDENTITY_READOUT

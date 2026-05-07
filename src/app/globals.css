@@ -17,6 +17,10 @@
     @apply bg-surface text-foreground selection:bg-primary-neon/30 overflow-x-hidden;
     background-image: var(--noise-texture);
   }
+
+  a:focus-visible {
+    @apply outline-none ring-2 ring-primary-neon ring-offset-2 ring-offset-surface;
+  }
 }
 
 @layer components {
@@ -46,7 +50,7 @@
   }
 
   .technical-readout {
-    @apply font-mono text-[10px] uppercase tracking-widest text-outline;
+    @apply font-mono text-xs sm:text-[10px] uppercase tracking-widest text-outline;
   }
 }
 
@@ -62,4 +66,13 @@ body::before {
   opacity: 0.03;
   pointer-events: none;
   z-index: 50;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

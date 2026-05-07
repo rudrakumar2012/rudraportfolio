@@ -33,13 +33,13 @@ export default function StatusIndicator() {
   };
 
   return (
-    <div className="flex items-center gap-3 bg-surface-highest/15 backdrop-blur-md px-4 py-2 rounded-md border border-outline-variant">
-      <div className={`w-3 h-3 rounded-full ${getStatusColor()}`} />
+    <div role="status" aria-live="polite" className="flex items-center gap-3 bg-surface-highest/15 backdrop-blur-md px-4 py-2 rounded-md border border-outline-variant">
+      <div className={`w-3 h-3 rounded-full ${getStatusColor()}`} aria-hidden="true" />
       <span className="text-[12px] font-mono tracking-widest uppercase">
         {status === "LOADING" ? "CHECKING SYSTEM..." : `SYSTEM ${status}`}
       </span>
       {status === "LIVE" && (
-        <Activity className="w-4 h-4 text-secondary animate-pulse ml-2" />
+        <Activity className="w-4 h-4 text-secondary ml-2" aria-hidden="true" />
       )}
     </div>
   );

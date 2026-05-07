@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Briefcase, ArrowRight } from "lucide-react";
 
 export default function ExperienceLog() {
+  const reducedMotion = useReducedMotion();
   const experiences = [
     {
       company: "Srijan Technologies",
@@ -28,7 +29,7 @@ export default function ExperienceLog() {
   ];
 
   return (
-    <section className="flex flex-col gap-12">
+    <section aria-label="Experience" className="flex flex-col gap-12">
       <div className="flex items-center justify-end gap-6 text-right">
         <span className="font-mono text-[10px] text-outline">SYS::TIMELINE</span>
         <div className="h-[1px] flex-grow bg-outline-variant opacity-30" />
@@ -39,12 +40,14 @@ export default function ExperienceLog() {
 
       <div className="relative border-l border-outline-variant/40 ml-4 md:ml-8 pl-8 md:pl-12 flex flex-col gap-16 py-4">
         {/* Animated Scanner Beam on the timeline */}
-        <motion.div
-          className="absolute left-[-1px] top-0 w-[2px] bg-primary-neon shadow-[0_0_10px_#00EEFC]"
-          initial={{ height: "0%", top: "0%" }}
-          whileInView={{ height: "30%", top: ["0%", "70%", "0%"] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        />
+        {!reducedMotion && (
+          <motion.div
+            className="absolute left-[-1px] top-0 w-[2px] bg-primary-neon shadow-[0_0_10px_#00EEFC]"
+            initial={{ height: "0%", top: "0%" }}
+            whileInView={{ height: "30%", top: ["0%", "70%", "0%"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+        )}
 
         {experiences.map((exp, index) => (
           <motion.div 
@@ -52,7 +55,7 @@ export default function ExperienceLog() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
+            transition={{ duration: reducedMotion ? 0 : 0.8, delay: reducedMotion ? 0 : index * 0.2 }}
             className="flex flex-col gap-4 relative group"
           >
             {/* Timeline Node */}

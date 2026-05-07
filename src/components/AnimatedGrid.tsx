@@ -1,12 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function AnimatedGrid() {
+  const reducedMotion = useReducedMotion();
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-20">
+    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-20" aria-hidden="true">
       {/* Dynamic CRT grid */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
           backgroundImage: `
@@ -18,18 +19,20 @@ export default function AnimatedGrid() {
           WebkitMaskImage: 'radial-gradient(ellipse 60% 60% at 50% 50%, black 10%, transparent 100%)'
         }}
       />
-      
+
       {/* Scanner line going from top to bottom */}
-      <motion.div
-        className="absolute left-0 right-0 h-[2px] bg-primary-neon opacity-50 blur-[2px]"
-        initial={{ top: "-10%" }}
-        animate={{ top: "110%" }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
+      {!reducedMotion && (
+        <motion.div
+          className="absolute left-0 right-0 h-[2px] bg-primary-neon opacity-50 blur-[2px]"
+          initial={{ top: "-10%" }}
+          animate={{ top: "110%" }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      )}
     </div>
   );
 }

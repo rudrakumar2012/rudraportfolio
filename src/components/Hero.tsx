@@ -1,40 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import StatusIndicator from "./StatusIndicator";
 import { Terminal, Cpu, Database, Globe } from "lucide-react";
 
 export default function Hero() {
+  const reducedMotion = useReducedMotion();
   return (
-    <section className="relative flex flex-col items-start gap-12 max-w-5xl">
+    <section aria-label="Hero" className="relative flex flex-col items-start gap-12 max-w-5xl">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: reducedMotion ? 0 : 0.8 }}
         className="flex flex-col gap-4"
       >
         <div className="flex items-center gap-3">
           <Terminal className="text-primary-neon w-5 h-5" />
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0.5 }}
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            animate={reducedMotion ? { opacity: 1 } : { opacity: [0.5, 1, 0.5] }}
+            transition={reducedMotion ? { duration: 0 } : { duration: 2, repeat: Infinity, ease: "linear" }}
             className="technical-readout"
           >
             MISSION_CRITICAL_SYSTEM_ACTIVE
           </motion.span>
         </div>
-        <motion.h1 
+        <motion.h1
           className="text-5xl sm:text-6xl md:text-8xl font-display font-medium leading-[1.1] tracking-tighter flex flex-wrap items-center"
-          initial={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
-          animate={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
-          transition={{ duration: 1, ease: "circOut", delay: 0.5 }}
+          initial={reducedMotion ? { opacity: 1 } : { clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+          animate={reducedMotion ? { opacity: 1 } : { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}
+          transition={reducedMotion ? { duration: 0 } : { duration: 1, ease: "circOut", delay: 0.5 }}
         >
           RUDRA <span className="text-primary-neon ml-2 md:ml-4">KUMAR</span>
           <motion.span
-            animate={{ opacity: [1, 0, 1] }}
-            transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+            animate={reducedMotion ? { opacity: 1 } : { opacity: [1, 0, 1] }}
+            transition={reducedMotion ? { duration: 0 } : { duration: 0.8, repeat: Infinity, ease: "linear" }}
             className="text-primary-neon"
+            aria-hidden="true"
           >
             _
           </motion.span>
@@ -53,7 +55,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: reducedMotion ? 0 : 0.8, delay: reducedMotion ? 0 : 0.2 }}
           className="glass-card p-1 bg-gradient-to-br from-primary-neon/10 to-transparent"
         >
           <div className="bg-surface p-8 rounded-[inherit]">
@@ -83,18 +85,20 @@ export default function Hero() {
               </div>
 
               <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-                <a 
-                  href="https://stock-sage-ai-eight.vercel.app/" 
-                  target="_blank" 
+                <a
+                  href="https://stock-sage-ai-eight.vercel.app/"
+                  target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="StockSage AI live preview"
                   className="bg-secondary text-surface px-6 sm:px-8 py-3 w-full sm:w-auto text-center rounded-sm font-display font-bold hover:brightness-110 active:scale-95 transition-all text-sm tracking-widest"
                 >
                   EXECUTE_LIVE_PREVIEW
                 </a>
-                <a 
-                  href="https://github.com/rudrakumar2012/StockSage-AI" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/rudrakumar2012/StockSage-AI"
+                  target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="StockSage AI source code"
                   className="text-outline hover:text-primary-neon transition-colors font-mono text-[12px] underline underline-offset-4"
                 >
                   VIEW_SOURCE_CODE
@@ -104,10 +108,10 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: reducedMotion ? 0 : 1, delay: reducedMotion ? 0 : 0.5 }}
           className="hidden lg:flex flex-col gap-8 items-end opacity-40 hover:opacity-100 transition-opacity"
         >
           <div className="flex flex-col items-end group">

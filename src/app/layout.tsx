@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className="antialiased font-sans relative">
         <MouseGlow />
         <AnimatedGrid />
-        <div className="hud-margin" />
+        <div className="hud-margin" aria-hidden="true" />
         <main className="hud-container relative z-10">{children}</main>
       </body>
     </html>

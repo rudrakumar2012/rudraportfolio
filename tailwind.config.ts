@@ -19,8 +19,8 @@ const config: Config = {
         "primary-neon": "#00EEFC",
         secondary: "#C3F400",
         tertiary: "#65AFFF",
-        outline: "#73757D",
-        "outline-variant": "rgba(115, 117, 125, 0.2)",
+        outline: "#91939B",
+        "outline-variant": "rgba(145, 147, 155, 0.25)",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
